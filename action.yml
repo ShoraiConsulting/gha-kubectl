@@ -1,0 +1,14 @@
+name: Setup kubectl
+description: Setup kubectl using apt
+
+inputs:
+  version:
+    description: 'Specifies the version of kubectl to install (format: major.minor or "v" followed by major.minor)'
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Run Script
+      run: ${GITHUB_ACTION_PATH}/setup.sh ${{ inputs.version }}
+      shell: bash
