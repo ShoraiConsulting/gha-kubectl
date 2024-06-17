@@ -4,7 +4,7 @@ set -e
 version="${1}"
 
 if [[ "${version}" != v* ]]; then
-    version="v${version}"
+  version="v${version}"
 fi
 
 echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/${version}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
